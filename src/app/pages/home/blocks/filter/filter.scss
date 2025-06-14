@@ -1,0 +1,37 @@
+
+.baspana-market__hero {
+  text-align: center;
+  padding: 2rem;
+  background: #e6f2f2;
+}
+
+.baspana-market__hero-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #008080;
+}
+
+.baspana-market__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.baspana-market__filters select,
+.baspana-market__filters button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.baspana-market__filters a {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 7px;
+  border: 1px solid #008080;
+  background: #008080;
+  color: white;
+  text-decoration: none;
+}

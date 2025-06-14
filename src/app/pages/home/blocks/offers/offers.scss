@@ -1,0 +1,29 @@
+
+
+.baspana-market__offers {
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.baspana-market__offer-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.baspana-market__offer-card {
+  width: 250px;
+  margin: 1rem;
+  background: #f4f4f4;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.baspana-market__offer-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+

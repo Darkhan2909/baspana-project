@@ -1,11 +1,28 @@
   <!-- Hero Section -->
-  <section class="baspana-market__hero">
-    <h1 class="baspana-market__hero-title">Ваш дом мечты ЗДЕСЬ!</h1>
-    <div class="baspana-market__filters">
-      <select><option>Регион</option></select>
-      <select><option>Тип жилья</option></select>
-      <select><option>Комнат</option></select>
-      <select><option>Цена</option></select>
-      <a [routerLink]="['app-search-pool']">Найти</a>
-    </div>
-  </section>
+   <section class="baspana-market__hero">
+  <h1 class="baspana-market__hero-title">Ваш дом мечты ЗДЕСЬ!</h1>
+
+  <div class="baspana-market__filters">
+    <select [(ngModel)]="selectedRegion">
+      <option disabled selected>Регион</option>
+      <option *ngFor="let region of regions">{{ region }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedType">
+      <option disabled selected>Тип жилья</option>
+      <option *ngFor="let type of types">{{ type }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedRooms">
+      <option disabled selected>Комнат</option>
+      <option *ngFor="let room of rooms">{{ room }}</option>
+    </select>
+
+    <select [(ngModel)]="selectedPrice">
+      <option disabled selected>Цена</option>
+      <option *ngFor="let price of prices">{{ price }}</option>
+    </select>
+
+    <a class="baspana-market__filters-button" [routerLink]="['/app-search-pool']">Найти</a>
+  </div>
+</section>

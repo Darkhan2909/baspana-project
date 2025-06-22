@@ -1,17 +1,47 @@
 import { Component } from '@angular/core';
 import { Filter } from './blocks/filter/filter';
 import { QuickLinks } from './blocks/quick-links/quick-links';
-import { Offers } from './blocks/offers/offers';
 import { Map } from './blocks/map/map';
-import { RouterOutlet } from '@angular/router';
 import { Extras } from './blocks/extras/extras';
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
-  imports: [Filter, QuickLinks, Offers, Map, Extras],
+  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class Home {
+  links = [
+    {
+      title: 'Новостройки',
+      subtitle: 'Всего объявлений: 365',
+      buttonText: 'Показать все'
+    },
+    {
+      title: 'Прямая продажа',
+      subtitle: 'Всего: 98',
+      buttonText: 'Подробнее'
+    },
+    {
+      title: 'Калькулятор кредита',
+      subtitle: 'Рассчитать платежи',
+      buttonText: 'Рассчитать'
+    },
+    {
+      title: 'Новости',
+      subtitle: 'Все новости от банка',
+      buttonText: 'Читать'
+    }
+  ];
 
+  regions = ['Алматы', 'Астана', 'Шымкент'];
+  types = ['Новостройка', 'Вторичка'];
+  rooms = ['1', '2', '3+'];
+  prices = ['до 10 млн', '10–20 млн', '20+ млн'];
+
+  onSearch(filters: any) {
+    console.log('Поиск с фильтрами:', filters);
+    // здесь будет логика фильтрации
+  }
 }

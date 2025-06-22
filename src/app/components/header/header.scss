@@ -1,61 +1,48 @@
 /* === Хедер === */
-.baspana-market__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.baspana-market__logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.baspana-market__nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #007a7a;
-}
-.baspana-market__auth button {
-  background-color: #007a7a;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
+.baspana-market {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+  }
 
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
 
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #008080;
+  }
 
-.baspana-market__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.baspana-market__logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #008080;
-}
-
-.baspana-market__nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #333;
-}
-
-.baspana-market__auth button {
-  padding: 0.5rem 1rem;
-  background-color: #008080;
-  color: white;
-  border: none;
-  border-radius: 4px;
-}
-a.baspana-market__logo-link {
+  &__logo-link {
     text-decoration: none;
+  }
+
+  &__nav .nav-link {
+    margin: 0 16px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  &__auth .button-primary {
+    padding: 8px 16px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 }

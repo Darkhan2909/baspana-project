@@ -1,23 +1,12 @@
 <!-- Quick Links -->
-  <section class="baspana-market__quick-links">
-    <div class="baspana-market__card">
-      <h3>Новостройки</h3>
-      <p>Всего объявлений: 365</p>
-      <button>Показать все</button>
-    </div>
-    <div class="baspana-market__card">
-      <h3>Прямая продажа</h3>
-      <p>Всего: 98</p>
-      <button>Подробнее</button>
-    </div>
-    <div class="baspana-market__card">
-      <h3>Калькулятор кредита</h3>
-      <p>Рассчитать платежи</p>
-      <button>Рассчитать</button>
-    </div>
-    <div class="baspana-market__card">
-      <h3>Новости</h3>
-      <p>Все новости от банка</p>
-      <button>Читать</button>
-    </div>
-  </section>
+ <section class="baspana-market__quick-links">
+  <div
+    class="baspana-market__card"
+    *ngFor="let link of links"
+  >
+    <h3>{{ link.title }}</h3>
+    <p>{{ link.subtitle }}</p>
+    <button>{{ link.buttonText }}</button>
+  </div>
+</section>
+

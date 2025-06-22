@@ -1,28 +1,29 @@
+.baspana-market {
+  &__extras {
+    display: flex;
+    justify-content: space-around;
+    background: #f1f5f9;
+    padding: 32px;
+    flex-wrap: wrap;
 
-.baspana-market__extras {
-  display: flex;
-  justify-content: space-around;
-  background: #f1f5f9;
-  padding: 2rem;
-  flex-wrap: wrap;
-}
+    &-item {
+      margin: 16px;
+      text-align: center;
+    }
 
-.baspana-market__extras div {
-  margin: 1rem;
-  text-align: center;
-}
+    &-input {
+      padding: 8px;
+      margin-right: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
-.baspana-market__extras input[type="email"] {
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.baspana-market__extras button {
-  padding: 0.5rem 1rem;
-  background: #008080;
-  color: white;
-  border: none;
-  border-radius: 4px;
+    &-button {
+      padding: 8px 16px;
+      background: #008080;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+  }
 }

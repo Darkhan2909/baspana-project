@@ -1,22 +1,16 @@
 
   <!-- Offers -->
   <section class="baspana-market__offers">
-    <h2>Лучшее предложение дня</h2>
-    <div class="baspana-market__offer-list">
-      <div class="baspana-market__offer-card">
-        <img src="offer1.jpg" alt="ЖК Asce Tec 2">
-        <h4>от 390 000 тг за м²</h4>
-        <p>ЖК Asce Tec 2</p>
-      </div>
-      <div class="baspana-market__offer-card">
-        <img src="offer2.jpg" alt="ЖК Тау Шапагат">
-        <h4>от 570 000 тг за м²</h4>
-        <p>ЖК Тау Шапагат</p>
-      </div>
-      <div class="baspana-market__offer-card">
-        <img src="offer3.jpg" alt="ЖК OJET">
-        <h4>от 300 000 тг за м²</h4>
-        <p>ЖК OJET</p>
-      </div>
+  <h2>Лучшее предложение дня</h2>
+  <div class="baspana-market__offer-list">
+    <div
+      class="baspana-market__offer-card"
+      *ngFor="let offer of offers"
+    >
+      <img [src]="offer.image" [alt]="offer.title" />
+      <h4>{{ offer.price }}</h4>
+      <p>{{ offer.title }}</p>
     </div>
-  </section>
+  </div>
+</section>
+

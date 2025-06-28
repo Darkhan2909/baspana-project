@@ -7,13 +7,13 @@ import { Input as InputComponent } from '../../../../shared/components/ui/input-
 
 @Component({
   selector: 'app-filter',
-  imports: [RouterLink, FormsModule, CommonModule, Select, Input, InputComponent],
+  imports: [RouterLink, FormsModule, CommonModule, Select],
   templateUrl: './filter.html',
   styleUrl: './filter.scss'
 })
 
 export class Filter {
-  @Input() placeholder: string = '';
+  // @Input() placeholder: string = '';
   filters = [
   {
     key: 'region',

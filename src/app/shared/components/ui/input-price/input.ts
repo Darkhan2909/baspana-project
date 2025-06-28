@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 @Component({
   selector: 'app-input',
-  imports: [DecimalPipe],
+  imports: [],
   templateUrl: './input.html',
   providers: [DecimalPipe],
   standalone: true,

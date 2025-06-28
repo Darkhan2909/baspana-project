@@ -4,7 +4,7 @@ import { QuickLinks } from '../home/blocks/quick-links/quick-links';
 
 @Component({
   selector: 'app-search-pool',
-  imports: [Offers,QuickLinks],
+  imports: [Offers],
   templateUrl: './search-pool.html',
   styleUrl: './search-pool.scss'
 })

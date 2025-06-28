@@ -1,0 +1,11 @@
+.baspana-market__select {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      &.active {
+        border: 1px solid teal;
+            background: #e6f2f2;
+      }
+}

@@ -3,26 +3,17 @@
   <h1 class="baspana-market__hero-title">Ваш дом мечты ЗДЕСЬ!</h1>
 
   <div class="baspana-market__filters">
-    <select [(ngModel)]="selectedRegion">
-      <option disabled selected>Регион</option>
-      <option *ngFor="let region of regions">{{ region }}</option>
-    </select>
+    
+    <ng-container>
+      @for(filter of filters; track $index){
+        <app-select
+          [label]="filter.label"
+          [options]="filter.options"
+          [(model)]="filters[$index].model">
+        </app-select>
+      }
+    </ng-container>
 
-    <select [(ngModel)]="selectedType">
-      <option disabled selected>Тип жилья</option>
-      <option *ngFor="let type of types">{{ type }}</option>
-    </select>
+  <a class="baspana-market__filters-button" [routerLink]="['/app-search-pool']">Найти</a>
+</div>
 
-    <select [(ngModel)]="selectedRooms">
-      <option disabled selected>Комнат</option>
-      <option *ngFor="let room of rooms">{{ room }}</option>
-    </select>
-
-    <select [(ngModel)]="selectedPrice">
-      <option disabled selected>Цена</option>
-      <option *ngFor="let price of prices">{{ price }}</option>
-    </select>
-
-    <a class="baspana-market__filters-button" [routerLink]="['/app-search-pool']">Найти</a>
-  </div>
-</section>

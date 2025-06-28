@@ -8,5 +8,8 @@ export const routes: Routes = [
     },
     {
         path: 'app-search-pool', component: SearchPool, pathMatch: 'full'
+    },
+    {
+        path: 'app-programms', loadComponent: () => import('./pages/programms/programms').then(m => m.Programms), pathMatch: 'full'
     }
 ];

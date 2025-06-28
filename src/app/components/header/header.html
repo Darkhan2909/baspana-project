@@ -1,13 +1,13 @@
 <!-- Header -->
   <header class="baspana-market__header">
-    <a [routerLink]="['']" class="baspana-market__logo-link">
+    <a [routerLink]="['']" routerLinkActive="active" class="baspana-market__logo-link">
         <div class="baspana-market__logo">ЖССБ</div>
     </a>
     <nav class="baspana-market__nav">
       <a class="nav-link" href="#">Купить</a>
       <a class="nav-link" href="#">Ипотека</a>
-      <a class="nav-link" [routerLink]="['app-search-pool']">Программы</a>
-      <a class="nav-link" [routerLink]="['app-search-pool']">Новостройки</a>
+      <a class="nav-link" [routerLink]="['app-programms']" routerLinkActive="active">Программы</a>
+      <a class="nav-link" [routerLink]="['app-search-pool']" routerLinkActive="active">Новостройки</a>
     </nav>
     <div class="baspana-market__auth">
       <button class="button-primary">Войти</button>

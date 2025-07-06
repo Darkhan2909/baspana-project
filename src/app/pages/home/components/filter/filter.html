@@ -4,7 +4,6 @@
 
   <div class="baspana-market__filters">
     
-    <ng-container>
       @for(filter of filters; track $index){
         <app-select
           [label]="filter.label"
@@ -12,7 +11,12 @@
           [(model)]="filters[$index].model">
         </app-select>
       }
-    </ng-container>
+      <app-input
+      [value]="price"
+      (valueChange)="onPriceChange($event)"
+      placeholder="{{ placeholder | lowercase }}"
+      />
+
 
   <a class="baspana-market__filters-button" [routerLink]="['/app-search-pool']">Найти</a>
 </div>

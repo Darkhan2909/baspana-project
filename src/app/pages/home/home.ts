@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { Filter } from './blocks/filter/filter';
-import { QuickLinks } from './blocks/quick-links/quick-links';
-import { Map } from './blocks/map/map';
-import { Extras } from './blocks/extras/extras';
+import { Filter } from './components/filter/filter';
+import { QuickLinks } from './components/quick-links/quick-links';
+import { Map } from './components/map/map';
+import { Extras } from './components/extras/extras';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HoverDirective } from '../../shared/directives/hover.directive';
 @Component({
   selector: 'app-home',
-  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule],
+  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule,HoverDirective],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

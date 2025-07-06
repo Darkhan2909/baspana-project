@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Offers } from '../home/blocks/offers/offers';
-import { QuickLinks } from '../home/blocks/quick-links/quick-links';
+import { Offers } from '../home/components/offers/offers';
+import { QuickLinks } from '../home/components/quick-links/quick-links';
 
 @Component({
   selector: 'app-search-pool',

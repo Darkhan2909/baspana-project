@@ -3,11 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
 import { Select } from '../../../../shared/components/ui/select/select';
-import { Input as InputComponent } from '../../../../shared/components/ui/input-price/input';
-
+import { AppInputComponent as InputComponent } from '../../../../shared/components/ui/input-price/input';
+import { HoverDirective } from '../../../../shared/directives/hover.directive';
 @Component({
   selector: 'app-filter',
-  imports: [RouterLink, FormsModule, CommonModule, Select],
+  imports: [RouterLink, FormsModule, CommonModule, Select, InputComponent,HoverDirective],
   templateUrl: './filter.html',
   styleUrl: './filter.scss'
 })
@@ -40,5 +40,13 @@ export class Filter {
     model: ''
   }
 ];
+
+
+    price = ''; // значение без форматирования
+    placeholder: string = 'Введите сумму';
+    onPriceChange(value: string): void {
+      this.price = value;
+      console.log('Без форматирования:', value);
+    }
 
 }

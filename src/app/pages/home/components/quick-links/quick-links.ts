@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HoverDirective } from '../../../../shared/directives/hover.directive';
 @Component({
   selector: 'app-quick-links',
-  imports: [CommonModule],
+  imports: [HoverDirective, CommonModule],
   templateUrl: './quick-links.html',
   styleUrl: './quick-links.scss'
 })

@@ -1,6 +1,8 @@
-<!-- <input
-  type="text"
-  [ngModel]="formattedPrice"
-  (ngModelChange)="onInputChange($event)"
-  placeholder="Введите сумму"
-/> -->
+<input
+      [value]="value | numberSpaced"
+      (input)="onInputChange($event)"
+      [placeholder]="placeholder"
+      [type]="type"
+      maxlength="10"
+      class="baspana-market__input"
+    />

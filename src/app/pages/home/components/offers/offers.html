@@ -1,14 +1,15 @@
 
   <!-- Offers -->
   <section class="baspana-market__offers">
-  <h2>Лучшее предложение дня</h2>
+  <h2>{{title | uppercase}}</h2>
   <div class="baspana-market__offer-list">
     <div
       class="baspana-market__offer-card"
       *ngFor="let offer of offers"
     >
       <img [src]="offer.image" [alt]="offer.title" />
-      <h4>{{ offer.price }}</h4>
+      <h4>{{ offer.price | numberSpaced }}</h4>
+      <p>Дата публикации: {{ offer.date | dateFormat }}</p>
       <p>{{ offer.title }}</p>
     </div>
   </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QuickLinks } from '../home/blocks/quick-links/quick-links';
+import { QuickLinks } from '../home/components/quick-links/quick-links';
 @Component({
   selector: 'app-programms',
   imports: [QuickLinks],

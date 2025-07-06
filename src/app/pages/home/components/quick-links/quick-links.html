@@ -4,9 +4,9 @@
     class="baspana-market__card"
     *ngFor="let link of links"
   >
-    <h3>{{ link.title }}</h3>
+    <h3>{{ link.title | titlecase}}</h3>
     <p>{{ link.subtitle }}</p>
-    <button>{{ link.buttonText }}</button>
+    <button class="baspana-market__button" appHover>{{ link.buttonText }}</button>
   </div>
 </section>
 

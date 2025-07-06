@@ -1,28 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NumberSpacedPipe } from '../../../pipe/number-spaced.pipe';
 @Component({
   selector: 'app-input',
-  imports: [],
+  imports: [FormsModule,NumberSpacedPipe],
   templateUrl: './input.html',
   providers: [DecimalPipe],
   standalone: true,
   styleUrl: './input.scss'
 })
-export class Input {
-price: number | null = null;
-  formattedPrice: string = '';
+export class AppInputComponent {
+  @Input() value: string = '';
+  @Input() placeholder: string = '';
+  @Input() type: string = 'text';
+  @Output() valueChange = new EventEmitter<string>();
 
-  constructor(private decimalPipe: DecimalPipe) {}
+  onInputChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    let raw = input.value.replace(/\D/g, ''); // убираем всё кроме цифр
+   
+    // const formatted = raw.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
-  onInputChange(value: string): void {
-    // Удалить всё, кроме цифр
-    const cleaned = value.replace(/\D/g, '');
-
-    this.price = cleaned ? Number(cleaned) : null;
-
-    // Применить форматирование через DecimalPipe (пример: "1 000 000")
-    this.formattedPrice = this.price !== null
-      ? this.decimalPipe.transform(this.price, '1.0-0', 'ru-RU') || ''
-      : '';
+    this.valueChange.emit(raw); // отдаём "чистое" число
+    input.value = raw;    // показываем отформатированное
   }
 }

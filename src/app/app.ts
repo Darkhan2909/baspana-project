@@ -9,7 +9,7 @@ import { SearchPool } from './pages/search-pool/search-pool';
   selector: 'app-root',
   imports: [Header, Footer, RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected title = 'baspana-project';

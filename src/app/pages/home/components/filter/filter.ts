@@ -4,10 +4,10 @@ import { RouterLink } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
 import { Select } from '../../../../shared/components/ui/select/select';
 import { AppInputComponent as InputComponent } from '../../../../shared/components/ui/input-price/input';
-import { HoverDirective } from '../../../../shared/directives/hover.directive';
+
 @Component({
   selector: 'app-filter',
-  imports: [RouterLink, FormsModule, CommonModule, Select, InputComponent,HoverDirective],
+  imports: [RouterLink, FormsModule, CommonModule, Select, InputComponent],
   templateUrl: './filter.html',
   styleUrl: './filter.scss'
 })

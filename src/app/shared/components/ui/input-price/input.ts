@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NumberSpacedPipe } from '../../../pipe/number-spaced.pipe';
+import { NumberSpacedPipe } from '../../../pipes/number-spaced.pipe';
 @Component({
   selector: 'app-input',
   imports: [FormsModule,NumberSpacedPipe],

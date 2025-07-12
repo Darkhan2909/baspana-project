@@ -5,10 +5,10 @@ import { Map } from './components/map/map';
 import { Extras } from './components/extras/extras';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HoverDirective } from '../../shared/directives/hover.directive';
+
 @Component({
   selector: 'app-home',
-  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule,HoverDirective],
+  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

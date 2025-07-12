@@ -2,6 +2,15 @@
   <!-- Offers -->
   <section class="baspana-market__offers">
   <h2>{{title | uppercase}}</h2>
+   <form (submit)="onSearch(); $event.preventDefault()">
+    <input
+      type="text"
+      [(ngModel)]="search"
+      name="search"
+      placeholder="Введите название объекта"
+    />
+    <button type="submit">Поиск</button>
+  </form>
   <div class="baspana-market__offer-list">
     <div
       class="baspana-market__offer-card"

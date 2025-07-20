@@ -1,0 +1,14 @@
+<div class="houses-list">
+  <h2>Дома</h2>
+  @for(h of houses; track h.name) {
+    <div class="house-card">
+      <img [src]="h.image" [alt]="h.name">
+      <h3>{{ h.name }}</h3>
+      <p>{{ h.address }}</p>
+      <p><strong>{{ h.price | number }} ₸</strong></p>
+    </div>
+  }
+    @if(houses.length === 0) {
+        <p>Нет доступных домов.</p>
+    }
+</div>

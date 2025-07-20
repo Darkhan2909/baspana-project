@@ -12,15 +12,17 @@
     <button type="submit">Поиск</button>
   </form>
   <div class="baspana-market__offer-list">
+    @for(offer of offers$ | async; track offer.title) {
+
     <div
       class="baspana-market__offer-card"
-      *ngFor="let offer of offers"
     >
       <img [src]="offer.image" [alt]="offer.title" />
       <h4>{{ offer.price | numberSpaced }}</h4>
       <p>Дата публикации: {{ offer.date | dateFormat }}</p>
       <p>{{ offer.title }}</p>
     </div>
+    }
   </div>
 </section>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DateFormatPipe } from '../../../../shared/pipes/date-format.pipe';
 import { NumberSpacedPipe } from '../../../../shared/pipes/number-spaced.pipe';
@@ -15,10 +15,11 @@ export class Offers implements OnInit {
   protected title = 'Лучшее предложение дня';
   offers: Offer[] = [];
   search = '';
-  
+  offerService = inject(OffersService);
+  offers$ = this.offerService.offers$;
 
-  constructor(private offerService: OffersService) {
-    this.offerService.offers$.subscribe(offer => (this.offers = offer));
+  constructor() {
+    // this.offerService.offers$.subscribe(offer => (this.offers = offer));
   }
 
   ngOnInit(): void {

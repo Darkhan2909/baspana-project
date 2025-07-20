@@ -5,10 +5,11 @@ import { Map } from './components/map/map';
 import { Extras } from './components/extras/extras';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Offers } from './components/offers/offers';
 
 @Component({
   selector: 'app-home',
-  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule],
+  imports: [Filter, QuickLinks, Map, Extras,FormsModule, CommonModule,Offers],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

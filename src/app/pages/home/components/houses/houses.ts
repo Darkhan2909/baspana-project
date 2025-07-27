@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import {HousesService} from '../../../../shared/Services/houses';
 import { House } from '../../../../shared/interfaces/house';
 import {DecimalPipe, CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-houses',
   imports: [DecimalPipe, CommonModule],

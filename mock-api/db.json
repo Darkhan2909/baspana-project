@@ -1,0 +1,36 @@
+{
+  "users": [
+    { "id": 1, "name": "Darkhan" },
+    { "id": 2, "name": "Ayan" },
+    { "id": 3, "name": "Aisulu" },
+    { "id": 4, "name": "Daniyar" },
+    { "id": 5, "name": "Alina" },
+    { "id": 6, "name": "Nurzhan" },
+    { "id": 7, "name": "Aibek" },
+    { "id": 8, "name": "Serik" },
+    { "id": 9, "name": "Diana" },
+    { "id": 10, "name": "Yerlan" },
+    { "id": 11, "name": "Aigerim" },
+    { "id": 12, "name": "Daulet" },
+    { "id": 13, "name": "Aisulu" },
+    { "id": 14, "name": "Nursultan" },
+    { "id": 15, "name": "Altynay" }
+  ],
+  "houses": [
+    { "id": 1, "title": "Дом в Алматы", "price": 120000 },
+    { "id": 2, "title": "Квартира в Астане", "price": 90000 },
+    { "id": 3, "title": "Таунхаус в Шымкенте", "price": 150000 },
+    { "id": 4, "title": "Коттедж в Караганде", "price": 200000 },
+    { "id": 5, "title": "Апартаменты в Павлодаре", "price": 80000 },
+    { "id": 6, "title": "Вилла в Атырау", "price": 300000 },
+    { "id": 7, "title": "Дом в Усть-Каменогорске", "price": 110000 },
+    { "id": 8, "title": "Квартира в Костанае", "price": 95000 },
+    { "id": 9, "title": "Таунхаус в Петропавловске", "price": 160000 },
+    { "id": 10, "title": "Коттедж в Таразе", "price": 180000 },
+    { "id": 11, "title": "Апартаменты в Семее", "price": 85000 },
+    { "id": 12, "title": "Вилла в Кокшетау", "price": 320000 },
+    { "id": 13, "title": "Дом в Алматы", "price": 125000 },
+    { "id": 14, "title": "Квартира в Астане", "price": 92000 },
+    { "id": 15, "title": "Таунхаус в Шымкенте", "price": 155000 }
+  ]
+}

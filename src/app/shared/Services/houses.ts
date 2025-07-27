@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { House } from '../interfaces/house';
 
 @Injectable({ providedIn: 'root' })
-export class HousesService {
-  private url = 'assets/houses.json';
+export class HousesService  {
+  private url = '/assets/houses.json';
 
   constructor(private http: HttpClient) {}
 

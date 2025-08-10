@@ -1,12 +1,11 @@
-import { Component,inject,OnInit } from '@angular/core';
-import {HousesService} from '../../../../shared/Services/houses';
-import { House } from '../../../../shared/interfaces/house';
-import {DecimalPipe, CommonModule } from '@angular/common';
-import { interval } from 'rxjs';
+import { Component, OnInit, inject } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { combineLatest, map, startWith } from 'rxjs';
+import { DecimalPipe, CommonModule } from '@angular/common';
+import { debounceTime, distinctUntilChanged, startWith } from 'rxjs/operators';
+import * as HousesActions from '../../../../store/houses/houses.actions'; // Ensure this path is correct and the file exists
+import { selectAllHouses } from '../../../../store/houses/houses.selectors'; // Ensure this path is correct and the file exists
 
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 @Component({
   selector: 'app-houses',
   standalone: true,
@@ -14,19 +13,21 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
   templateUrl: './houses.html',
   styleUrl: './houses.scss'
 })
-export class Houses implements OnInit{
-  service = inject(HousesService);
-  interval$ = interval(1000);
-  house$ = this.service.house$;
+export class HousesComponent implements OnInit {
+  private store = inject(Store);
+
+  houses$ = this.store.select(selectAllHouses);
   search = new FormControl('');
+
   ngOnInit(): void {
-    // при вводе — debounceTime, затем switchMap к API
-    this.search.valueChanges.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap(query => this.service.getHouses(query || ''))
-    ).subscribe();
-    // при первом открытии — без фильтра
-    this.service.getHouses().subscribe();
+    // первая загрузка
+    this.store.dispatch(HousesActions.loadHouses({ query: '' }));
+
+    // авто-поиск
+    this.search.valueChanges
+      .pipe(startWith(''), debounceTime(300), distinctUntilChanged())
+      .subscribe(q => {
+        this.store.dispatch(HousesActions.loadHouses({ query: q || '' }));
+      });
   }
 }

@@ -33,7 +33,7 @@
     { "id": 14, "title": "Квартира в Астане", "price": 92000 },
     { "id": 15, "title": "Таунхаус в Шымкенте", "price": 155000 }
   ],
-  "Houses": [
+  "housesall": [
 { "id": 1, "name": "ЖК GreenCity", "address": "Алматы, ул. Абая, 25", "price": 25000000, "image": "https://cdn.pixabay.com/photo/2021/09/04/09/33/house-6597406_640.jpg" },
 { "id": 2, "name": "ЖК SunHouse",   "address": "Алматы, пр. Достык, 105", "price": 34000000, "image": "https://media.istockphoto.com/id/109350275/photo/modern-living-room-and-patio-next-to-swimming-pool.jpg?s=1024x1024&w=is&k=20&c=Hfa87nIQMkGiqr_kNhTvM49fS5MHUGJfGnqsuKB7n3M=" },
 { "id": 3, "name": "ЖК SkyLine",    "address": "Алматы, ул. Сатпаева, 12", "price": 27500000, "image": "https://media.istockphoto.com/id/479824818/photo/beautiful-colorful-cityscape.jpg?s=1024x1024&w=is&k=20&c=YP94LHXVfWjxSjM3Yh_Nr8GiUIhA-OxK7ti4ov6KA8Y=" },

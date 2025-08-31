@@ -21,7 +21,7 @@ export class HousesComponent implements OnInit {
 
   ngOnInit(): void {
     // первая загрузка
-    this.store.dispatch(HousesActions.loadHouses({ query: '' }));
+    // this.store.dispatch(HousesActions.loadHouses({ query: '' }));
 
     // авто-поиск
     this.search.valueChanges

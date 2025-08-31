@@ -16,8 +16,6 @@ export const initialHousesState: HousesState = {
   query: ''
 };
 
-export const housesFeatureKey = 'houses';
-
 export const housesReducer = createReducer(
   initialHousesState,
   on(HousesActions.loadHouses, (state, { query }) => ({

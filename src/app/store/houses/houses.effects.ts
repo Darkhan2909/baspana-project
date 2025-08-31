@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as HousesActions from './houses.actions';
 import { catchError, debounceTime, map, of, switchMap } from 'rxjs';
@@ -7,8 +7,8 @@ import { House } from '../../shared/interfaces/house';
 
 @Injectable()
 export class HousesEffects {
-  constructor(private actions$: Actions, private api: HousesApiService) {}
-
+  actions$ = inject(Actions);
+  api = inject(HousesApiService);
   loadHouses$ = createEffect(() =>
     this.actions$.pipe(
       ofType(HousesActions.loadHouses),

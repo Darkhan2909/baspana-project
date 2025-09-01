@@ -1,25 +1,27 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { UsersService } from '../../../../shared/Services/users';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Store } from '@ngrx/store';
+import * as UsersActions from '../../../../shared/store/users/users.actions';
+import { selectAllUsers, selectUsersLoading } from '../../../../shared/store/users/users.selectors';
+import { AsyncPipe, CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './users.html',
   styleUrl: './users.scss'
 })
 export class Users {
-  users: any[] = [];
-  private destroyRef = inject(DestroyRef); 
-  constructor(private usersService: UsersService) {}
+[x: string]: any;
+  private store = inject(Store);
+
+  users$ = this.store.select(selectAllUsers);
+  loading$ = this.store.select(selectUsersLoading);
+
   ngOnInit(): void {
-    // вот тут идет subscribe 👇
-    this.usersService.getUsers()
-    .pipe(takeUntilDestroyed(this.destroyRef)) // автоматически отписываемся при уничтожении компонента
-    .subscribe((data) => {
-      this.users = data;
-      console.log('Данные пришли:', data);
-    });
+    this.store.dispatch(UsersActions.loadUsers());
   }
 }

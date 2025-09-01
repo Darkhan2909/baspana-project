@@ -1,6 +1,6 @@
 <h2>Список пользователей</h2>
 <ul>
-    @for(user of users; track user.id) {
+    @for(user of users$ | async; track user.id) {
         <li>
             {{ user.name }} ({{ user.email }})
         </li>  

@@ -1,27 +1,21 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { UsersService } from '../../../../shared/Services/users';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Store } from '@ngrx/store';
-import * as UsersActions from '../../../../shared/store/users/users.actions';
-import { selectAllUsers, selectUsersLoading } from '../../../../shared/store/users/users.selectors';
+import { UsersStore } from '../../../../shared/signalStore/userStore';
 import { AsyncPipe, CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [CommonModule],
   templateUrl: './users.html',
   styleUrl: './users.scss'
 })
-export class Users {
-[x: string]: any;
-  private store = inject(Store);
+export class Users implements OnInit {
+  store = inject(UsersStore);
 
-  users$ = this.store.select(selectAllUsers);
-  loading$ = this.store.select(selectUsersLoading);
-
-  ngOnInit(): void {
-    this.store.dispatch(UsersActions.loadUsers());
+  ngOnInit() {
+    // this.store.loadUsers(); // авто-загрузка при входе
   }
 }

@@ -13,7 +13,11 @@ import { AsyncPipe, CommonModule } from '@angular/common';
   styleUrl: './users.scss'
 })
 export class Users implements OnInit {
+  getUsers() {
+    throw new Error('Method not implemented.');
+  }
   store = inject(UsersStore);
+  private destroyRef = inject(DestroyRef);
 
   ngOnInit() {
     // this.store.loadUsers(); // авто-загрузка при входе

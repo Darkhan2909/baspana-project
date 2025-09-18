@@ -2,6 +2,9 @@
 import { inject } from '@angular/core';
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 import { UsersService } from '../Services/users';
+import { Users } from '../../pages/home/components/users/users';
+import { rxMethod } from '@ngrx/signals/rxjs-interop';
+import { pipe, switchMap, tap } from 'rxjs';
 
 interface UsersState {
   users: any[];
@@ -36,5 +39,18 @@ export const UsersStore = signalStore(
         }
       },
     };
+  }),
+  withMethods((store, usersService = inject(UsersService)) => ({
+    loadUsers: rxMethod<void>(
+      pipe(
+        tap(() => patchState(store, { loading: true, error: null })),
+        switchMap(() => usersService.getUsers().pipe(
+          tap({
+            next: (users) => patchState(store, { users,  loading: false }),
+            error: (err) => patchState(store, { error: err.message || 'Ошибка загрузки', loading: false }),
+          })
+        )),
+      ),
+    )
   })
-);
+));

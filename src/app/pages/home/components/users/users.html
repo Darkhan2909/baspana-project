@@ -1,17 +1,31 @@
+<div class="baspana-market-users-component">
+    <h2>Список пользователей</h2>
 
-<h2>Список пользователей</h2>
+    <button class="baspana-market--button" (click)="store.loadUsers()">Загрузить</button>
 
-    <button (click)="store.loadUsers()">Загрузить</button>
-
-    <div *ngIf="store.loading()">Загрузка...</div>
-    <div *ngIf="store.error()">{{ store.error() }}</div>
+    @if(store.loading()){
+        <div>Загрузка...</div>
+    }  
+    @if(store.users().length > 0){
+        <div>Загружено</div>
+    }
+    @if(store.users().length === 0 && !store.loading() && !store.error()){
+        <div>Пользователи не загружены</div>
+    }
+    @if(store.users().length === 0 && !store.loading() && store.error()){
+        <div>Ошибка при загрузке пользователей</div>
+        <div>{{ store.error() }}</div>
+    }
 
     <ul>
-    @for(user of  store.users(); track user.id) {
-        <li>
-            {{ user.name }} ({{ user.email }})
-        </li>  
-    }
-  
-</ul>
-
+        @for(user of  store.users(); track user.id) {
+            <li>
+                {{ user.name }} ({{ user.email }})
+            </li>  
+        }
+        @empty {
+            <li>Нет пользователей</li>
+        }
+    
+    </ul>
+</div>

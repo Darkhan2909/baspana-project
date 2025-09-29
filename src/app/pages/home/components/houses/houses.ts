@@ -14,7 +14,7 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
   templateUrl: './houses.html',
   styleUrl: './houses.scss'
 })
-export class Houses implements OnInit{
+export class Houses implements OnInit {
   service = inject(HousesService);
   interval$ = interval(1000);
   house$ = this.service.house$;

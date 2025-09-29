@@ -5,6 +5,8 @@ import { UsersService } from '../Services/users';
 import { Users } from '../../pages/home/components/users/users';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { pipe, switchMap, tap } from 'rxjs';
+import { tapResponse } from '@ngrx/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 interface UsersState {
   users: any[];
@@ -20,34 +22,35 @@ export const UsersStore = signalStore(
     users: [],
     loading: false,
     error: null,
+
   }),
 
   // методы для работы со стором
-  withMethods((store) => {
-    const usersService = inject(UsersService);
+  // withMethods((store) => {
+  //   const usersService = inject(UsersService);
 
-    return {
-      // загрузка пользователей
-      loadUsers: async () => {
-        patchState(store, { loading: true, error: null });
+  //   return {
+  //     // загрузка пользователей
+  //     loadUsers: async () => {
+  //       patchState(store, { loading: true, error: null });
 
-        try {
-          const data = await usersService.getUsers().toPromise();
-          patchState(store, { users: data, loading: false });
-        } catch (err: any) {
-          patchState(store, { error: err.message || 'Ошибка загрузки', loading: false });
-        }
-      },
-    };
-  }),
+  //       try {
+  //         const data = await usersService.getUsers().toPromise();
+  //         patchState(store, { users: data, loading: false });
+  //       } catch (err: any) {
+  //         patchState(store, { error: err.message || 'Ошибка загрузки', loading: false });
+  //       }
+  //     },
+  //   };
+  // }),
   withMethods((store, usersService = inject(UsersService)) => ({
     loadUsers: rxMethod<void>(
       pipe(
         tap(() => patchState(store, { loading: true, error: null })),
         switchMap(() => usersService.getUsers().pipe(
-          tap({
+          tapResponse({
             next: (users) => patchState(store, { users,  loading: false }),
-            error: (err) => patchState(store, { error: err.message || 'Ошибка загрузки', loading: false }),
+            error: (err: HttpErrorResponse) => patchState(store, { error: err.message || 'Ошибка загрузки', loading: false }),
           })
         )),
       ),

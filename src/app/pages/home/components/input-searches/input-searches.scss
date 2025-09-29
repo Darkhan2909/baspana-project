@@ -1,0 +1,11 @@
+input.baspana-market--input {
+    border-radius: 7px;
+    height: 31px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input.baspana-market--input:focus {
+    border: 3px solid teal;
+    background: azure;
+}

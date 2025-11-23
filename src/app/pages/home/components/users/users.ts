@@ -6,7 +6,6 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { InputSearches } from "../input-searches/input-searches";
 
-
 @Component({
   selector: 'app-users',
   standalone: true,

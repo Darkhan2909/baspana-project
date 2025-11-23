@@ -1,4 +1,15 @@
 
 <app-quick-links></app-quick-links>
-
-<app-users></app-users>
+@defer(on timer(2000)) {
+    <app-users></app-users>
+    
+    <!-- <app-text-loader></app-text-loader> -->
+}
+@placeholder {
+    <app-text-loader></app-text-loader>
+}
+@loading {
+    <!-- <h3>I am here!!!</h3> -->
+    
+    <app-text-loader></app-text-loader>
+}

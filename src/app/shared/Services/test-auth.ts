@@ -6,6 +6,12 @@ import { IAuthService } from '../interfaces/auth';
     providedIn: 'root'
 })
 export class FakeAuthService implements IAuthService {
+  logout(): string {
+    throw new Error('Method not implemented.');
+  }
+  isLoggedIn(): boolean {
+    throw new Error('Method not implemented.');
+  }
   login(): string {
     return '🔧 Это фейковый логин (тест)';
   }

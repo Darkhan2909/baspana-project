@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component,Inject } from '@angular/core';
+import { Component,Inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { HoverDirective } from '../../shared/directives/hover.directive';
 import { InjectionToken } from '@angular/core';
@@ -13,20 +13,35 @@ export const AUTH_SERVICE_TOKEN = new InjectionToken<IAuthService>('AUTH_SERVICE
   selector: 'app-header',
   imports: [RouterLink,HoverDirective],
   standalone: true,
-  providers: [{provide: AUTH_SERVICE_TOKEN, useClass: RealAuthService}], // Используйте FakeAuthService для тестирования
+  providers: [{provide: AUTH_SERVICE_TOKEN, useExisting: RealAuthService}], // Используйте FakeAuthService для тестирования
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
+
 export class Header {
-  booleanlogin = false;
+  // booleanlogin = false;
   message = '';
+  loggedIn = signal(false);
   constructor(@Inject(AUTH_SERVICE_TOKEN) private authService: IAuthService) {}
-  onLogin() {
-    // Здесь можно вызвать сервис аутентификации
+  // onLogin() {
+  //   // Здесь можно вызвать сервис аутентификации
+  //   this.message = this.authService.login();
+  //   this.booleanlogin = true;
+  //   console.log(this.message);
+  //   alert(this.message);
+  //   // Дополнительная логика после входа
+  // }
+
+  onLogin(){
     this.message = this.authService.login();
-    this.booleanlogin = true;
+    this.loggedIn.set(true);
     console.log(this.message);
     alert(this.message);
-    // Дополнительная логика после входа
+  }
+  onLogout(){
+    this.message = this.authService.logout();
+    this.loggedIn.set(false);
+    console.log(this.message);
+    alert(this.message);
   }
 }

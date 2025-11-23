@@ -26,3 +26,26 @@
     }
   }
 }
+form.baspana-market__offer-form {
+    display: flex;
+    gap: 9px;
+}
+
+input.baspana-market__offer-input{
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 300px;
+}
+
+button.baspana-market__offer-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}

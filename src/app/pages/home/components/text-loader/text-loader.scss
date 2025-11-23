@@ -1,0 +1,51 @@
+.ob__baspana__lib-loader-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #edf7f7;
+  border-radius: 16px;
+  padding: 16px;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  display: grid;
+}
+
+.ob__baspana__lib-loader-line {
+  background-color: #dbe3e3;
+  border-radius: 8px;
+  height: 14px;
+  animation: pulse 1.5s infinite;
+}
+
+.ob__baspana__lib-loader-line.short {
+  width: 60%;
+  margin-bottom: 8px;
+}
+
+.ob__baspana__lib-loader-line.long {
+  width: 80%;
+}
+
+.ob__baspana__lib-loader-avatar {
+  width: 48px;
+  height: 48px;
+  background-color: #dbe3e3;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+  flex-shrink: 0;
+  width: 1358px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}

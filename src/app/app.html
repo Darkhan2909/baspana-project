@@ -1,4 +1,5 @@
-<div class="baspana-market">
+@defer {
+  <div class="baspana-market">
   <app-header></app-header>
   <router-outlet>
     <!-- <app-home></app-home> -->
@@ -6,3 +7,10 @@
   </router-outlet>
   <app-footer></app-footer>
 </div>
+}
+@placeholder {
+  <app-text-loader></app-text-loader>
+}
+@loading {
+  <app-text-loader></app-text-loader>
+}

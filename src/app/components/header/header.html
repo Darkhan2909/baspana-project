@@ -10,11 +10,12 @@
       <a class="nav-link" [routerLink]="['app-search-pool']" routerLinkActive="active">Новостройки</a>
     </nav>
     <div class="baspana-market__auth">
-      @if(message){
+      @if(loggedIn()){
         <span class="auth-message">{{ message }}</span>
+        <button (click)="onLogout();" class="button-primary" appHover>Выйти</button>
       }
       @else{
-        <button (click)="onLogin()" class="button-primary" appHover>Войти</button>
+        <button (click)="onLogin();" class="button-primary" appHover>Войти</button>
       }
       <!-- <p>{{ message }}</p> -->
     </div>
